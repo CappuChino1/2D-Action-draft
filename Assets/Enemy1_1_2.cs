@@ -3,7 +3,7 @@ using UnityEngine;
 public class Enemy1_2 : MonoBehaviour
 {
     GameObject player;
-
+    public float knockbackPower = 0.01f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,6 +15,7 @@ public class Enemy1_2 : MonoBehaviour
     int direction = 1;
     float speed = 0.01f;
 
+
     // Update is called once per frame
     void Update()
     {
@@ -22,7 +23,7 @@ public class Enemy1_2 : MonoBehaviour
         this.delta += Time.deltaTime;
 
         // span秒ごとに方向転換させる
-        if(this.delta > this.span){
+        if (this.delta > this.span) {
             this.delta = 0;
             direction *= -1;
         }
@@ -50,5 +51,25 @@ public class Enemy1_2 : MonoBehaviour
         }
         */
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("hit Player");
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+
+
+            if (rb != null)
+            {
+
+                Vector2 knockbackDir = (collision.transform.position - transform.position).normalized;
+                rb.AddForce(knockbackDir * knockbackPower, ForceMode2D.Impulse);
+            }
+            //他のエフェクト追加できる
+
+        }
+    }
+
 }
 
