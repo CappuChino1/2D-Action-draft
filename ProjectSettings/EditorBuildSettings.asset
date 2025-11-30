@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main.unity
     guid: 548efbe8196c7bb41a94d25d70cf82e6
+  - enabled: 1
+    path: Assets/Main2.unity
+    guid: e36a57d5fe8156f42a604e7944dab5d6
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
