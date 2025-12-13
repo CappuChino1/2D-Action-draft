@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private AudioSource audioSource;
+    private AudioSource _audioSource;
 
     public CharacterController2D controller;
     public Animator animator;
@@ -17,8 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        //Audio(Jamp)を取得
-        audioSource = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -35,7 +34,8 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsJumping", true);
 
             //ジャンプの効果音←まだジャンプしても音が鳴らない
-            audioSource.Play();
+            _audioSource.Play();
+            //Initantiate(_jumpSE);
         }
 
         if (Input.GetButtonDown("Crouch"))
@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
     public void OnLanding()
     {
         animator.SetBool("IsJumping", false);
+        //_audioResource.Play();
     }
 
     public void OnCrouching(bool isCrouching)
@@ -64,5 +65,13 @@ public class PlayerMovement : MonoBehaviour
         // Move our character
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
+       // _PlayingEnd();
+    }
+
+
+    private void _PlayingEnd()
+    {
+        if(_audioSource.isPlaying) return; //isPlaying←再生中、再生し終えたらDestroyで削除
+        Destroy(gameObject);
     }
 }
