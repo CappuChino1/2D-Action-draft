@@ -33,14 +33,16 @@ public class PlayerMovement : MonoBehaviour
             jump = true;
             animator.SetBool("IsJumping", true);
 
-            //ジャンプの効果音←まだジャンプしても音が鳴らない
+            //ジャンプの効果音(上ボタンを押すと連続で音がなってしまう)
             _audioSource.Play();
+            Debug.Log("Jumping");
             //Initantiate(_jumpSE);
         }
 
         if (Input.GetButtonDown("Crouch"))
         {
             crouch = true;
+            Debug.Log("Crouch");
         }
         else if (Input.GetButtonUp("Crouch"))
         {
@@ -69,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    private void _PlayingEnd()
+    private void _PlayingEnd()//呼んだらプレイやー消えちゃう、、、
     {
         if(_audioSource.isPlaying) return; //isPlaying←再生中、再生し終えたらDestroyで削除
         Destroy(gameObject);
