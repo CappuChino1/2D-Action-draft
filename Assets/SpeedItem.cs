@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HealingItem : MonoBehaviour
+public class SpeedItem : MonoBehaviour
 {
     //public InventoryUI inventoryUI; // ←UIをドラッグして設定
 
@@ -47,7 +47,7 @@ public class HealingItem : MonoBehaviour
             
             //監督スクリプトにプレイヤーと衝突したことを伝える
             GameObject director = GameObject.Find("ItemGameDirector");
-            director.GetComponent<ItemGameDirector>().HealingItemDisplay();
+            director.GetComponent<ItemGameDirector>().SpeedItemDisplay();
             //衝突した場合はアイテムを消す
             Destroy(gameObject);
         }

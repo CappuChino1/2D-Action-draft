@@ -4,6 +4,8 @@ public class InvincibleItem : MonoBehaviour
 {
     GameObject player;
 
+    //public InventoryUI inventoryUI; // InspectorでInventoryUIを紐付け
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,9 +33,14 @@ public class InvincibleItem : MonoBehaviour
         float r1 = 0.3f;  //敵キャラの半径
         float r2 = 0.5f;  //pプレイヤーの半径
 
+        
         if(d < r1 + r2){
-            //衝突した場合は矢を消す
+            GameObject director = GameObject.Find("ItemGameDirector");
+            director.GetComponent<ItemGameDirector>().InvincibleState();
+
+            //衝突した場合はアイテムを消す
             Destroy(gameObject);
         }
+        
     }
 }
