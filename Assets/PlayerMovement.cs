@@ -32,8 +32,8 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
             animator.SetBool("IsJumping", true);
-
-            //ƒWƒƒƒ“ƒv‚ÌŒø‰Ê‰¹(ãƒ{ƒ^ƒ“‚ğ‰Ÿ‚·‚Æ˜A‘±‚Å‰¹‚ª‚È‚Á‚Ä‚µ‚Ü‚¤)
+//ã‚ã„ã†ãˆãŠ
+            //ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½vï¿½ÌŒï¿½ï¿½Ê‰ï¿½(ï¿½ï¿½{ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ˜Aï¿½ï¿½ï¿½Å‰ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½)
             _audioSource.Play();
             Debug.Log("Jumping");
             Debug.Log("TestLog");
@@ -72,9 +72,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    private void _PlayingEnd()//ŒÄ‚ñ‚¾‚çƒvƒŒƒC‚â[Á‚¦‚¿‚á‚¤AAA
+    private void _PlayingEnd()//ï¿½Ä‚ñ‚¾‚ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á‚¤ï¿½Aï¿½Aï¿½A
     {
-        if(_audioSource.isPlaying) return; //isPlaying©Ä¶’†AÄ¶‚µI‚¦‚½‚çDestroy‚Åíœ
+        if(_audioSource.isPlaying) return; //isPlayingï¿½ï¿½ï¿½Äï¿½ï¿½ï¿½ï¿½Aï¿½Äï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Destroyï¿½Åíœ
         Destroy(gameObject);
     }
 }
