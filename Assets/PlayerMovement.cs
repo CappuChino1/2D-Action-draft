@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
             //ジャンプの効果音(上ボタンを押すと連続で音がなってしまう)
             _audioSource.Play();
             Debug.Log("Jumping");
+            Debug.Log("TestLog");
             //Initantiate(_jumpSE);
         }
 
