@@ -21,6 +21,7 @@ public class HealthUI : MonoBehaviour
         currentHearts -= amount;
         currentHearts = Mathf.Clamp(currentHearts, 0, maxHearts);
         DrawHearts();
+
     }
 
     void DrawHearts()

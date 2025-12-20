@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public float invincibleTime = 1f;
 
     private bool isInvincible;
+    private bool isDead = false;
 
     void Start()
     {
@@ -22,15 +23,24 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         if (healthUI.currentHearts <= 0)
         {
             Die();
+            return;
         }
 
         StartCoroutine(Invincibility());
     }
 
-    void Die()
+    public void Die()
     {
-        Debug.Log("Player Dead");
-        // TODO: Game over / respawn
+        if (isDead) return;
+        isDead = true;
+
+        Debug.Log("Game Over");
+
+        GetComponent<PlayerMovement>().enabled = false;
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
+        );
     }
 
     System.Collections.IEnumerator Invincibility()
