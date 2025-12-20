@@ -1178,6 +1178,7 @@ GameObject:
   - component: {fileID: 820667358}
   - component: {fileID: 820667359}
   - component: {fileID: 820667360}
+  - component: {fileID: 820667361}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1560,6 +1561,20 @@ MonoBehaviour:
   attackPoint: {fileID: 322997933}
   attackDuration: 0.2
   damage: 1
+--- !u!114 &820667361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820667350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d02b8f485554414eb9d1da407459d53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  healthUI: {fileID: 913659272}
+  invincibleTime: 1
 --- !u!1 &913659270
 GameObject:
   m_ObjectHideFlags: 0
