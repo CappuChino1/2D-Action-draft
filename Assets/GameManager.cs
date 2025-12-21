@@ -40,3 +40,15 @@ public class GameManager : MonoBehaviour
         PlaySE(Jamp);
     }
 }*/
+
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class GameManager : MonoBehaviour
+{
+    public void Retry()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(1);
+    }
+}
