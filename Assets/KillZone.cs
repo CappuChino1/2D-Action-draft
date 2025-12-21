@@ -1,4 +1,4 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 
 public class KillZone : MonoBehaviour
 {
@@ -6,12 +6,12 @@ public class KillZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player fell Å® Game Over");
+            Debug.Log("Player fell ‚Üí Game Over");
 
             PlayerHealth health = other.GetComponent<PlayerHealth>();
             if (health != null)
             {
-                health.Die(); // instant death
+                health.TakeDamage(999);
             }
         }
     }
