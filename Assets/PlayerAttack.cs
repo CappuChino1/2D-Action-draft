@@ -28,6 +28,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (animator != null)
             animator.SetTrigger("Attack");
+            
 
         attackPoint.SetActive(true);
         Invoke(nameof(EndAttack), attackDuration);

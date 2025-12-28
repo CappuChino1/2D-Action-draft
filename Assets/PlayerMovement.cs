@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
             animator.SetBool("IsJumping", true);
-//あいうえお
+            
             //�W�����v�̌��ʉ�(��{�^���������ƘA���ŉ����Ȃ��Ă��܂�)
             _audioSource.Play();
             Debug.Log("Jumping");

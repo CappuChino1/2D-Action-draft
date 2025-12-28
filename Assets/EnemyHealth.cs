@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
+    [Header("加算スコア")] public int myScore;
+
     public int hp = 1;
 
     //EnemyのHPが0になったら、消滅するアニメーション-----------------------
@@ -42,6 +44,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
         if (hp <= 0)
         {
+            //(仮)敵が消えたらscore+10点
+            ScoreManager.instance.score += myScore;
             //Destroy(gameObject);
         }
     }
