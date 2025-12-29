@@ -49,7 +49,11 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;
         }
-
+        
+        if (Input.GetButtonDown("fire1"))
+        {
+            animator.SetTrigger("Attack");
+        }
     }
 
     public void OnLanding()
