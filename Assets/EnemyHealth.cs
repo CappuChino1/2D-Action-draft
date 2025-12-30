@@ -46,7 +46,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         {
             //(仮)敵が消えたらscore+10点
             ScoreManager.instance.score += myScore;
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
     //-----------------------------------------------------------------

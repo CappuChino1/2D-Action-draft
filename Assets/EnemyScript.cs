@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class EnemyScript : MonoBehaviour, IDamageable
 {
     public float knockbackPower = 0.01f;
+    public int hp = 1;
 
     // Update is called once per frame
     void Update()
@@ -51,6 +52,13 @@ public class EnemyScript : MonoBehaviour
                 target.TakeDamage(contactDamage);
             }
         }
+    }
+
+    public void TakeDamage(int amount)
+    {
+        hp -= amount;
+        if (hp <= 0)
+            Destroy(gameObject);
     }
 
 
