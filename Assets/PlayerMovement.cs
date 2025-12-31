@@ -36,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
             //�W�����v�̌��ʉ�(��{�^���������ƘA���ŉ����Ȃ��Ă��܂�)
             _audioSource.Play();
             Debug.Log("Jumping");
-            Debug.Log("TestLog");
             //Initantiate(_jumpSE);
         }
 
