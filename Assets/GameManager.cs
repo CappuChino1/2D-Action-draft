@@ -46,9 +46,18 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameClearUIController uiController;
+
     public void Retry()
     {
         Time.timeScale = 1f;
+        SceneManager.LoadScene(1);
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        uiController.ResetScorePosition();
         SceneManager.LoadScene(1);
     }
 }
