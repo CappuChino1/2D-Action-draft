@@ -7,6 +7,7 @@ public class GameClearUI : MonoBehaviour
     public ScoreMover scoreMover;
 
     private GameClearUIController uiController;
+    private Score showScore;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,7 +18,8 @@ public class GameClearUI : MonoBehaviour
             //scoreMover.MoveToClearPosition();
             gameClearPanel.SetActive(true);
             Time.timeScale = 0f; // pause game
-            uiController.ShowClearScore();
+            //showScore,SetActive(true);
+            //uiController.ShowClearScore();
         }
         
     }
