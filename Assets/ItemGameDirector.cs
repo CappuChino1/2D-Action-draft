@@ -1,25 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI; //UIを使うので忘れずに追加
 
-/*
-public class UsingItemEffect{
-    
-    void Update(){
-
-        public void UsingItem_Effect(int Item){
-        
-            if(Item == 1){  //回復アイテム使用時の処理（効果発動）
-                Debug.Log("回復アイテムを使用しました。");
-
-            } else if(Item == 2){  //スピードアップアイテム使用時の処理（効果発動）
-                Debug.Log("スピードアップアイテムを使用しました。");
-
-            }
-        }
-    }
-}
-*/
-
 public class ItemGameDirector : MonoBehaviour{
 
     GameObject ItemBox01;
@@ -27,8 +8,11 @@ public class ItemGameDirector : MonoBehaviour{
     GameObject ItemIcon02;
 
     [SerializeField] PlayerMovement playerSpeed;
+    [SerializeField] HealthUI playerHP;
 
-    float span = 10.0f;  //スピードアップの制限時間
+
+
+    float SpeedUpspan = 10.0f;  //スピードアップの制限時間
     float delta = 0;
 
     bool isSpeedUp = false;  //false:スピードアップがない状態
@@ -78,6 +62,16 @@ public class ItemGameDirector : MonoBehaviour{
         }
     }
 
+    //回復アイテムを使ったときの処理
+    public void HealingEffect(){
+
+        if(playerHP.currentHearts < 3 && playerHP.currentHearts != 0){
+            playerHP.currentHearts += 1;
+            GameObject Healing = GameObject.Find("HeartsUI");
+            Healing.GetComponent<HealthUI>().RecoveryHearts();
+        }
+    }
+
     public void SpeedItemDisplay(){
         for(int i=0; i<ItemSlot.Length; i++){
 
@@ -101,9 +95,16 @@ public class ItemGameDirector : MonoBehaviour{
         }
     }
 
-    public void InvincibleState(){
+    /*
+    public void InvincibleEffect(){
+
+        //this.delta += Time.deltaTime;
         Debug.Log("無敵状態になりました。");
+
+            GameObject playerlayer = GameObject.Find("Player");
+            playerlayer.GetComponent<CharacterController2D>().InvincibleState();
     }
+    */
 
     public void UsingItem(){
 
@@ -113,7 +114,7 @@ public class ItemGameDirector : MonoBehaviour{
                 Debug.Log("アイテムスロット1のアイテムを使用しました。");
                 this.ItemIcon01.GetComponent<Image>().sprite = null;
 
-                UsingItem_Effect(ItemSlot[0]);
+                UsingItem_Effect(ItemSlot[0]);　
                 //UsingItemEffect myItem = new UsingItemEffect();
                 //myItem.UsingItem_Effect(ItemSlot[0]);
 
@@ -184,6 +185,7 @@ public class ItemGameDirector : MonoBehaviour{
 
         if(Item == 1){
             Debug.Log("回復アイテムを使用しました。");
+            HealingEffect();
         
         } else if(Item == 2){
             Debug.Log("スピードアップアイテムを使用しました。");
@@ -199,7 +201,7 @@ public class ItemGameDirector : MonoBehaviour{
         if(isSpeedUp == true){
             this.delta += Time.deltaTime;
 
-            if(this.delta > this.span){
+            if(this.delta > this.SpeedUpspan){
                 this.delta = 0;
                 Debug.Log("スピードアップ効果が切れました。");
                 playerSpeed.runSpeed = 40.0f;

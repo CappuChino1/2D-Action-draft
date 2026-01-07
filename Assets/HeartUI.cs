@@ -42,4 +42,25 @@ public class HealthUI : MonoBehaviour
                 heart.sprite = emptyHeart;
         }
     }
+
+    //回復アイテム使用時の処理
+    public void RecoveryHearts()
+    {
+
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        for (int i = 0; i < maxHearts; i++)
+        {
+            Image heart = Instantiate(heartPrefab, transform);
+            heart.gameObject.SetActive(true);
+
+            if (i < currentHearts)
+                heart.sprite = fullHeart;
+            else
+                heart.sprite = emptyHeart;
+        }
+    }
 }

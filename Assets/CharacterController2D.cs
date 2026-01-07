@@ -13,6 +13,12 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
     [SerializeField] private AudioSource m_audioSource;
 
+    //無敵アイテム用変数----------------------------------------
+    float delta = 0;
+    float Invinciblespan = 10.0f; //無敵時間
+    bool isInvincible = false;  //false:無敵アイテム取ってない状態
+    //------------------------------------------------------------
+
     const float k_GroundedRadius = .1f; // Radius of the overlap circle to determine if grounded
     private bool m_Grounded;            // Whether or not the player is grounded.
     const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
@@ -60,6 +66,9 @@ public class CharacterController2D : MonoBehaviour
                     OnLandEvent.Invoke();
             }
         }
+
+        //無敵状態の効果時間
+        InvincibleEffect();
     }
 
 
@@ -145,5 +154,28 @@ public class CharacterController2D : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    //無敵アイテム使用時の無敵時間
+    public void InvincibleState(){
+
+        gameObject.layer = LayerMask.NameToLayer("InvinciblePlayer");
+        isInvincible = true;
+        InvincibleEffect();
+    }
+
+    //無敵アイテムの効果時間
+    public void InvincibleEffect(){
+
+        if(isInvincible == true){
+            this.delta += Time.deltaTime;
+
+            if(this.delta > this.Invinciblespan){
+                this.delta = 0;
+                Debug.Log("無敵状態がなくなりました");
+                gameObject.layer = LayerMask.NameToLayer("Player");
+                isInvincible = false;
+            }
+        }
     }
 }
