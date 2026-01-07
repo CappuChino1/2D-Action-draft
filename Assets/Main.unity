@@ -1786,8 +1786,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.023513, y: -0.018136}
-  m_Size: {x: 0.320811, y: 0.203404}
+  m_Offset: {x: -0.023512991, y: 0.021166686}
+  m_Size: {x: 0.32081103, y: 0.2820099}
   m_Direction: 1
 --- !u!50 &921594438
 Rigidbody2D:
@@ -15193,7 +15193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97ec072d42044ba40969615b031b7b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemGameDirector
-  playerSpeed: {fileID: 0}
+  playerSpeed: {fileID: 1228584445}
   HealingItem: {fileID: 7441961575386531069, guid: 18328c598b80d0d4297d92b5dfb0a04a,
     type: 3}
   SpeedItem: {fileID: 21300000, guid: bdce2a9cb3d0242958c2593a3b8d8742, type: 3}
@@ -15847,6 +15847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e90a729ed25d6742b8200eca0b0bf4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  uiController: {fileID: 0}
 --- !u!4 &2141086913
 Transform:
   m_ObjectHideFlags: 0
