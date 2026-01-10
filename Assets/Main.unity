@@ -1680,9 +1680,9 @@ MonoBehaviour:
   currentHearts: 0
   heartPrefab: {fileID: 8582796067402284209, guid: 6c24b7d62ad29b84b9f82a3d55b08156,
     type: 3}
-  fullHeart: {fileID: -787841774662396242, guid: fba8628aa6b033b4bbef66848f219432,
+  fullHeart: {fileID: 4790494858708412440, guid: 8369bcaad9a843345a0efcf811ea6d90,
     type: 3}
-  emptyHeart: {fileID: -1372620999783126367, guid: f27ab08cd8641fb49bf65c981b131ad7,
+  emptyHeart: {fileID: -705465144167411356, guid: bdd98c0e4e7502347a8d07f82018dc68,
     type: 3}
 --- !u!114 &913659273
 MonoBehaviour:
