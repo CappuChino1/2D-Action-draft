@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour, IDamageable
 {
-    public float knockbackPower = 0.01f;
+    public float knockbackPower = 0.2f;
     public int hp = 1;
+    public int myScore;
 
     // Update is called once per frame
     void Update()
@@ -58,7 +59,8 @@ public class EnemyScript : MonoBehaviour, IDamageable
     {
         hp -= amount;
         if (hp <= 0)
-            Destroy(gameObject);
+        ScoreManager.instance.score += myScore;
+        Destroy(gameObject);
     }
 
 
