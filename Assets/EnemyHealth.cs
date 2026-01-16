@@ -5,7 +5,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [Header("加算スコア")] public int myScore;
 
     public int hp = 1;
-
+    public float knockbackPower = 0.2f;
     //EnemyのHPが0になったら、消滅するアニメーション-----------------------
     public Sprite[] enemyDeath;
     float time = 0;
@@ -33,6 +33,33 @@ public class EnemyHealth : MonoBehaviour, IDamageable
                     Destroy(gameObject);
                 }
             }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("hit Player");
+
+            //  Deal damage
+            IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
+            if (damageable != null)
+            {
+                damageable.TakeDamage(1); // contact damage
+            }
+
+            // 2 Knockback
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                Vector2 knockbackDir =
+                    (collision.transform.position - transform.position).normalized;
+
+                rb.AddForce(knockbackDir * knockbackPower, ForceMode2D.Impulse);
+            }
+
+            //  hit effect / sound here
         }
     }
 
