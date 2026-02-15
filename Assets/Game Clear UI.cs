@@ -5,7 +5,7 @@ public class GameClearUI : MonoBehaviour
 {
     public GameObject gameClearPanel;
     public ScoreMover scoreMover;
-
+    [Header("â¡éZÉXÉRÉA")] public int myScore;
     private GameClearUIController uiController;
     private Score showScore;
 

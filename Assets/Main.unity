@@ -305,6 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   myScore: 10
   hp: 1
+  knockbackPower: 0.2
   enemyDeath:
   - {fileID: 21300000, guid: 815f73f3585044a32811d21502d58770, type: 3}
   - {fileID: 21300000, guid: 1c8013ef5a0c147a5a059fde439f12b6, type: 3}
@@ -1462,6 +1463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   myScore: 10
   hp: 1
+  knockbackPower: 0.2
   enemyDeath:
   - {fileID: 21300000, guid: 815f73f3585044a32811d21502d58770, type: 3}
   - {fileID: 21300000, guid: 1c8013ef5a0c147a5a059fde439f12b6, type: 3}
@@ -1745,6 +1747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   myScore: 10
   hp: 1
+  knockbackPower: 0.2
   enemyDeath:
   - {fileID: 21300000, guid: 815f73f3585044a32811d21502d58770, type: 3}
   - {fileID: 21300000, guid: 1c8013ef5a0c147a5a059fde439f12b6, type: 3}
@@ -3979,6 +3982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   myScore: 10
   hp: 1
+  knockbackPower: 0.2
   enemyDeath:
   - {fileID: 21300000, guid: 815f73f3585044a32811d21502d58770, type: 3}
   - {fileID: 21300000, guid: 1c8013ef5a0c147a5a059fde439f12b6, type: 3}
@@ -4179,6 +4183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   myScore: 10
   hp: 1
+  knockbackPower: 0.2
   enemyDeath:
   - {fileID: 21300000, guid: 815f73f3585044a32811d21502d58770, type: 3}
   - {fileID: 21300000, guid: 1c8013ef5a0c147a5a059fde439f12b6, type: 3}
@@ -14746,7 +14751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 600, y: 350}
+  m_AnchoredPosition: {x: 650, y: 400}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1870743731
@@ -14846,7 +14851,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 26.302368, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -15277,6 +15282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   myScore: 10
   hp: 1
+  knockbackPower: 0.2
   enemyDeath:
   - {fileID: 21300000, guid: 815f73f3585044a32811d21502d58770, type: 3}
   - {fileID: 21300000, guid: 1c8013ef5a0c147a5a059fde439f12b6, type: 3}
