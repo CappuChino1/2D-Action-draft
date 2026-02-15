@@ -51,13 +51,14 @@ public class GameManager : MonoBehaviour
     public void Retry()
     {
         Time.timeScale = 1f;
+        ScoreManager.instance.score = 0;
         SceneManager.LoadScene(1);
     }
 
     public void Restart()
     {
         Time.timeScale = 1f;
-        uiController.ResetScorePosition();
-        SceneManager.LoadScene(1);
+        ScoreManager.instance.score = 0;
+        SceneManager.LoadScene("Startmenu");
     }
 }
